@@ -23,9 +23,9 @@ def receivingcode():
     return render_template('receivingcode.html')
 
 # from receivingcode, redirect to explaining
-@app.route('/posreceivied')
-def posreceivied():
-    return render_template('posreceivied.html')
+@app.route('/poscode')
+def poscode():
+    return render_template('poscode.html')
 
 # from posreceivied, redirect to choosemission
 @app.route('/explaining')
