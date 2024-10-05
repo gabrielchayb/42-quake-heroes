@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efeito de Digitação</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff00;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .typewriter {
+      overflow: hidden; /* Oculta o texto até que seja revelado pela animação */
+      border-right: 0.15em solid #00ff00; /* Adiciona um cursor piscando */
+      white-space: nowrap; /* Garante que o texto fique em uma única linha */
+      letter-spacing: 0.15em; /* Espaçamento entre letras */
+      animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+    }
+
+    /* Animação da digitação */
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    /* Efeito de piscar do cursor */
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #00ff00; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="typewriter">Bem-vindo ao 42 Quake Heroes!</h1>
+
+</body>
+</html>

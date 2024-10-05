@@ -73,7 +73,13 @@ body {
     z-index: 4;
 }
 
-
+.image-button-mars {
+    position: absolute;
+    bottom: 10px; /* Alinhado logo acima da Lua */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
 
 .button {
     position: absolute;
