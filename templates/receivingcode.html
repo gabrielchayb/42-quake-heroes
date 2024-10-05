@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vídeo em Tela Cheia</title>
+  <title>42 Quake Heroes</title>
   <style>
     body, html {
       margin: 0;
@@ -24,9 +24,20 @@
       object-fit: cover;
     }
 
+    .h2-centered {
+      position: absolute;
+      top: 50%; /* Centraliza verticalmente */
+      left: 50%; /* Centraliza horizontalmente */
+      transform: translate(-50%, -50%); /* Ajusta o posicionamento para centralizar */
+      text-align: center;
+      font-size: 2.5em;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
     .button-container {
       position: absolute;
-      top: 50%;
+      top: 70%; /* Posiciona o botão abaixo do título */
       left: 50%;
       transform: translate(-50%, -50%);
       display: none;
@@ -34,9 +45,9 @@
 
     .button-container button {
       padding: 15px 30px;
-      font-size: 18px;
-      background-color: #4CAF50;
-      color: white;
+      font-size: 24px;
+      background-color: #e5e6e7;
+      color: black;
       border: none;
       cursor: pointer;
       border-radius: 5px;
@@ -45,18 +56,32 @@
     .button-container button:hover {
       background-color: #45a049;
     }
+
+    @media screen and (max-width: 768px) and (min-width: 480px) {
+      .h2-centered {
+        font-size: 1.8em;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .h2-centered {
+        font-size: 1.5em;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="video-container">
     <video id="myVideo" autoplay>
-      <source src="/static/videos/" type="video/mp4">
+      <source src="/static/videos/code.mp4" type="video/mp4">
       Seu navegador não suporta o elemento de vídeo.
     </video>
 
+    <h2 class="h2-centered">Receiving Code...</h2>
+
     <div class="button-container" id="buttonContainer">
-      <button onclick="window.location.href='{{ url_for('home') }}'">Avançar</button>
+      <button onclick="window.location.href='{{ url_for('home') }}'">Next Page</button>
     </div>
   </div>
 
