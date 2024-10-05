@@ -13,8 +13,8 @@ body {
 .background-image.terra {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 300px;
+    right: 0;
+    width: 500px;
     height: auto;
     z-index: 2;
 }
@@ -38,6 +38,7 @@ body {
 .image-button {
     text-decoration: none; /* Remover sublinhado do link */
     border: none;
+    
   }
 
 /* Estilos para o Módulo (centralizado em cima da Lua) */
