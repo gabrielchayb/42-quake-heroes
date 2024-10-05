@@ -106,13 +106,13 @@ body {
 }
 
 /* Responsividade */
-@media screen and (max-width: 768px) and (min-width: 320px) {
+@media screen and (max-width: 768px) and (min-width: 480px) {
     .background-image.terra {
         width: 300px;
     }
 
     .background-image.modulo {
-        bottom: 50px;
+        bottom: 30px;
     }
 
     .background-image.lua {
@@ -120,13 +120,17 @@ body {
     }
 
     .h2-centered {
-        font-size: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .description {
+        font-size: 0.8rem;
     }
 }
 
-@media screen and (max-width: 768px) and (min-width: 320px) {
+@media screen and (max-width: 480px) and (min-width: 320px) {
     .background-image.terra {
-        width: 300px;
+        width: 150px;
     }
 
     .background-image.modulo {
@@ -138,6 +142,11 @@ body {
     }
 
     .h2-centered {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    .description {
+        font-size: 0.7em;
+        top: 40%;
     }
 }

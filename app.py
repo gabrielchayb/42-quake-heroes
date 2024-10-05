@@ -12,6 +12,11 @@ def home():
 def home1():
     return render_template('home1.html')
 
+# third piece of text
+@app.route('/home2')
+def home2():
+    return render_template('home2.html')
+
 # from home1, redirect to posreceivied 
 @app.route('/receivingcode')
 def receivingcode():
