@@ -1,0 +1,142 @@
+/* Estilos gerais */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    position: relative;
+    height: 100vh;
+}
+
+/* Estilos para a Terra (superior esquerda) */
+.background-image.terra {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: auto;
+    z-index: 2;
+}
+
+.image-buttons {
+    position: absolute;
+    bottom: 10px; /* Alinhado logo acima da Lua */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.image-button img {
+    position: absolute;
+    bottom: 50px; /* Alinhado logo acima da Lua */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+  
+.image-button {
+    text-decoration: none; /* Remover sublinhado do link */
+    border: none;
+  }
+
+/* Estilos para o Módulo (centralizado em cima da Lua) */
+.background-image.modulo {
+    position: absolute;
+    bottom: 50px; /* Alinhado logo acima da Lua */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.description {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    z-index: 4;
+  }
+
+/* Estilos para centralizar o h2 */
+.h2-centered {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    z-index: 4;
+}
+
+
+
+.button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+/* Estilos para a Lua (100% na parte inferior) */
+.background-image.lua {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background-image: url('static/lua.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Estilos para as imagens */
+.background-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.background-image img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) and (min-width: 320px) {
+    .background-image.terra {
+        width: 300px;
+    }
+
+    .background-image.modulo {
+        bottom: 50px;
+    }
+
+    .background-image.lua {
+        height: 100px;
+    }
+
+    .h2-centered {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
+    .background-image.terra {
+        width: 300px;
+    }
+
+    .background-image.modulo {
+        bottom: 50px;
+    }
+
+    .background-image.lua {
+        height: 100px;
+    }
+
+    .h2-centered {
+        font-size: 1.5rem;
+    }
+}

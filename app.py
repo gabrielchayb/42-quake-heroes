@@ -7,11 +7,12 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
+# second piece of text
 @app.route('/home1')
 def home1():
     return render_template('home1.html')
 
-# from home, redirect to posreceivied 
+# from home1, redirect to posreceivied 
 @app.route('/receivingcode')
 def receivingcode():
     return render_template('receivingcode.html')
