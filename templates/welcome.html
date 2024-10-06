@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <title>Animação de Digitação Responsiva</title>
     <style>
         body {
@@ -27,54 +28,36 @@
             margin: 0 auto;
         }
 
-        h1 {
-            letter-spacing: 0.1em;
-            margin: 20px 0;
-            font-size: 1rem;
-            white-space: normal;
-            word-wrap: break-word;
-            display: inline-block; /* Exibir o texto como inline */
-            overflow: hidden; /* Esconder o texto não digitado ainda */
-            border-right: 0.15em solid #00ff00; /* Efeito do cursor */
-            animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+        #text {
+            font-size: 20px;
+            font-family: Arial, sans-serif; /* Definindo uma fonte */
         }
 
-        @keyframes typing {
-            from { 
-                width: 0; /* O texto começa invisível */
-            }
-            to { 
-                width: 100%; /* Mostra o texto completo */
-            }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: #00ff00; }
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1rem;
-            }
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Bem-vindo ao 42 Quake Heroes. Prepare-se para salvar a Terra, monitore os terremotos lunares e torne-se o herói que precisamos!</h1>
+        <div id="text"></div>
     </div>
-
+    
     <a href="{{ url_for('solarsystem') }}" class="image-buttons">
         <img src="/static/imgs/modulo2.png" alt="Imagem do Módulo">
-      </a>
+    </a>
+
+    <script>
+        var text = document.getElementById('text')
+        var TypeWriter = new Typewriter(text, {
+            loop: false,
+            delay: 75,
+            cursor: '<span style="color: #00ff00;">|</span>'
+        });
+
+        TypeWriter
+            .pauseFor(1000)
+            .typeString('Bem-vindo ao <span style="color:#00ff00;">42 Quake Heroes</span> . Prepare-se para salvar a Terra, monitore os <span style="color:#00ff00;">terremotos lunares</span> e torne-se o herói que precisamos!')
+            .start()
+    </script>
 
 </body>
 </html>
