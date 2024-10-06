@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            text-align: center;
+        }
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .member {
+            flex: 1 1 calc(33.333% - 20px);
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .member img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+        .catalog-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .member {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .member {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <div class="team">
+            <div class="member">
+                <img src="member1.jpg" alt="Member 1">
+                <h3>Member 1</h3>
+                <p>Role</p>
+            </div>
+            <div class="member">
+                <img src="member2.jpg" alt="Member 2">
+                <h3>Member 2</h3>
+                <p>Role</p>
+            </div>
+            <div class="member">
+                <img src="member3.jpg" alt="Member 3">
+                <h3>Member 3</h3>
+                <p>Role</p>
+            </div>
+            <div class="member">
+                <img src="member4.jpg" alt="Member 4">
+                <h3>Member 4</h3>
+                <p>Role</p>
+            </div>
+            <div class="member">
+                <img src="member5.jpg" alt="Member 5">
+                <h3>Member 5</h3>
+                <p>Role</p>
+            </div>
+            <div class="member">
+                <img src="member6.jpg" alt="Member 6">
+                <h3>Member 6</h3>
+                <p>Role</p>
+            </div>
+        </div>
+        <a href="catalog" class="catalog-button">View Catalog</a>
+    </div>
+</body>
+</html>
