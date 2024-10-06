@@ -14,6 +14,4 @@ How the Algorithm Works
 
 Our AI algorithm is designed to recognize seismic tremor patterns based on large volumes of data from previous NASA missions and other space agencies. It learns from this data and improves its accuracy over time, enabling reliable detection. By optimizing sensor operations based on the detected activity, we reduce energy consumption during periods of seismic inactivity.​⬤
 
-cria um venv
-pip install flask 
-flask run
+
