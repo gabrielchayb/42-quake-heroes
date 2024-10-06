@@ -89,6 +89,57 @@ body {
     z-index: 4;
 }
 
+<<<<<<< Updated upstream
+=======
+/* Estilos para centralizar os botões no canto inferior */
+.menu-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os botões */
+    z-index: 4;
+}
+
+/* Estilos para os links como botões */
+.menu-buttons a {
+    background-color: #1463BD; /* Fundo azul escuro */
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white; /* Texto branco */
+    padding: 10px 40px; /* Tamanho padronizado */
+    border-radius: 10px; /* Bordas arredondadas */
+    border: 2px solid #5CE1E6; /* Borda azul claro */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    min-width: 120px; /* Largura mínima para padronizar os botões */
+    text-align: center; /* Centralizar o texto */
+}
+
+.menu-buttons a:hover {
+    transform: scale(1.1);
+    background-color: #5271FF; /* Alteração de cor para azul médio no hover */
+}
+
+/* Botão com menos destaque (Team) */
+.menu-buttons .button-team {
+    background-color: #000000; /* Azul médio */
+    border: 2px solid #5CE1E6; /* Azul escuro na borda */
+    color: #E0E0E0; /* Texto mais claro */
+}
+
+.menu-buttons .button-team:hover {
+    background-color: #5271FF; /* Azul claro no hover */
+    color: black; /* Texto preto para contraste */
+}
+
+.menu-buttons a p {
+    margin: 0;
+}
+
+
+>>>>>>> Stashed changes
 /* Estilos para a Lua (100% na parte inferior) */
 .background-image.lua {
     position: absolute;
@@ -132,6 +183,7 @@ body {
     .description {
         font-size: 0.8rem;
     }
+    
 }
 
 @media screen and (max-width: 480px) and (min-width: 320px) {
