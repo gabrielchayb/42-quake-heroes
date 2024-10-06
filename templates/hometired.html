@@ -13,15 +13,7 @@
       <img src="/static/imgs/terrareal.png" alt="Imagem da Terra">
     </div>
 
-    <a href="{{ url_for('homemars') }}" class="button-back">
-      <p>Back</p>
-    </a>
-    <a href="{{ url_for('receivingcode') }}" class="button-forward">
-      <p>Forward</p>
-    </a>
-    <a href="{{ url_for('team') }}" class="button-team">
-      <p>Team</p>
-    </a>
+    
 
     <p class="description"> Sending signals requires significant energy.
       Transmitting high-resolution data from distant bodies is power-intensive and challenging.
@@ -33,6 +25,19 @@
     <a href="{{ url_for('receivingcode') }}" class="image-buttons">
       <img src="/static/imgs/moduloreal.png" alt="Imagem do Módulo">
     </a>
+
+
+    <div class="menu-buttons">
+      <a href="{{ url_for('homemars') }}" class="button-back">
+        <p>Back</p>
+      </a>
+      <a href="{{ url_for('team') }}" class="button-team">
+        <p>Team</p>
+      </a>
+      <a href="{{ url_for('receivingcode') }}" class="button-forward">
+        <p>Forward</p>
+      </a>
+    </div>
 
     <div class="background-image lua">
       <img src="/static/imgs/lua.png" alt="Imagem da Lua">

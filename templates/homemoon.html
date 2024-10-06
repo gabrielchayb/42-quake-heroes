@@ -13,15 +13,7 @@
       <img src="/static/imgs/terrareal.png" alt="Imagem da Terra">
     </div>
 
-    <a href="{{ url_for('homemoon') }}" class="button-back">
-        <p>Back</p>
-      </a>
-      <a href="{{ url_for('homemars') }}" class="button-forward">
-        <p>Forward</p>
-      </a>
-      <a href="{{ url_for('team') }}" class="button-team">
-        <p>Team</p>
-      </a>
+    
 
     <p class="description"> They are called moonquakes when they occur on the Moon.</p>
     
@@ -30,6 +22,19 @@
     <a href="{{ url_for('homemars') }}" class="image-buttons">
       <img src="/static/imgs/modulo2.png" alt="Imagem do Módulo">
     </a>
+
+
+    <div class="menu-buttons">
+      <a href="{{ url_for('home') }}" class="button-back">
+        <p>Back</p>
+      </a>
+      <a href="{{ url_for('team') }}" class="button-team">
+        <p>Team</p>
+      </a>
+      <a href="{{ url_for('homemars') }}" class="button-forward">
+        <p>Forward</p>
+      </a>
+    </div>
 
     <div class="background-image lua">
       <img src="/static/imgs/lua.png" alt="Imagem da Lua">
