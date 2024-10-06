@@ -4,8 +4,8 @@ app = Flask(__name__)
 
 # home, index, first page , redirect to receivingcode
 @app.route('/')
-def welcome():
-    return render_template('welcome.html')
+def index():
+    return render_template('index.html')
 
 @app.route('/solarsystem')
 def solarsystem():
