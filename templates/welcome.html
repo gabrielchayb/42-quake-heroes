@@ -28,8 +28,8 @@
         }
 
         .container {
-            max-width: 90%;
-            width: 600px;
+            max-width: 100%;
+            width: 900px;
             margin: 0 auto;
         }
 
@@ -55,7 +55,7 @@
         /* Classe para a imagem com a animação */
         .fade-in-image {
             opacity: 0;
-            animation: fadeIn 3s forwards; /* Animação dura 2 segundos */
+            animation: fadeIn 2s forwards; /* Animação dura 2 segundos */
         }
 
     </style>
@@ -63,7 +63,7 @@
 <body>
 
     <div class="container">
-        <div id="text" style="text-align: center;"></div>
+        <div id="text" style="text-align: left;"></div>
     </div>
     
     <a href="{{ url_for('solarsystem') }}" class="image-buttons">
@@ -80,12 +80,12 @@
     
         TypeWriter
             .pauseFor(500)
-            .typeString('Welcome! We are the team <span style="color:#5CE1E6;">42 Quake Heroes</span>')
+            .typeString('Welcome! We are the team <span style="color:#5CE1E6;">42 Quake Heroes.</span>')
             .pauseFor(500)
-            .deleteChars(15)
+            .deleteChars(16)
             .pauseFor(300)  
-            .typeString('<br><img src="../static/imgs/logo.jpeg" class="fade-in-image" style="width: 200px; height: auto; margin-top: 20px;">') // Adiciona a imagem
-            .typeString('<br>Join us on an immersive journey to learn more about <br><span style="color:#5CE1E6;">seismic data across space</span>. Click the module to start your journey across the solar system!')
+            .typeString('<br><img src="../static/imgs/logo.jpeg" class="fade-in-image" style="width: 300px; height: auto; margin-top: 20px;">') // Adiciona a imagem
+            .typeString('<br>Join us on an immersive journey to learn more about <br><span style="color:#5CE1E6;">seismic data across space</span>. Click the module below to start your journey across the solar system!')
             .start()
     </script>    
 
