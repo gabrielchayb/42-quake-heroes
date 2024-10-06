@@ -7,7 +7,7 @@
   <link rel="shortcut icon" type="im" href="/static/imgs/logo.jpeg">
   <link rel="stylesheet" href="/static/css/styles.css">
 </head>
-<body>
+<body class = "fade">
 
   <div class="image-container">
     <div class="background-image terra">
@@ -44,6 +44,12 @@
       <img src="/static/imgs/lua.png" alt="Imagem da Lua">
     </div>
   </div>
+
+  <script>
+    window.onload = function() {
+        document.body.classList.add('fade-in');
+    };
+  </script>
 
 </body>
 </html>

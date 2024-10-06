@@ -8,7 +8,7 @@
   <link rel="shortcut icon" type="im" href="/static/imgs/logo.jpeg">
   <script src="https://kit.fontawesome.com/1bdef45d83.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class = "fade">
 
   <div class="image-container">
     <div class="background-image terra">
@@ -40,5 +40,10 @@
     </div>
   </div>
 
+  <script>
+    window.onload = function() {
+        document.body.classList.add('fade-in');
+    };
+  </script>
 </body>
 </html>

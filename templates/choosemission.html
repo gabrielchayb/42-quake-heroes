@@ -14,7 +14,14 @@
       flex-direction: row; /* Modo padrão: horizontal */
       height: 100vh;
       overflow: hidden;
+      opacity: 0;
+      transition: opacity 1s ease;
     }
+
+    body.fade-in {
+        opacity: 1;
+    }
+    
     
     /* Title and subtitle styles */
     .title {
@@ -54,7 +61,7 @@
     }
   </style>
 </head>
-<body>
+<body class = "fade">
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
@@ -201,6 +208,12 @@
 
         animate();
         adjustModelsForScreenSize(); // Ajustar a posição dos modelos inicialmente
+    </script>
+
+    <script>
+      window.onload = function() {
+          document.body.classList.add('fade-in');
+      };
     </script>
 </body>
 </html>

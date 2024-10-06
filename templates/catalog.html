@@ -18,7 +18,14 @@
             justify-content: center;
             height: 100vh;
             text-align: center;
+            opacity: 0;
+            transition: opacity 1s ease;
         }
+
+        body.fade-in {
+            opacity: 1;
+        }
+        
         .container {
             max-width: 600px;
             padding: 20px;
@@ -35,11 +42,17 @@
         }
     </style>
 </head>
-<body>
+<body class = "fade">
     <div class="container">
         <h1>Bem-vindo à nossa página</h1>
         <p>Para acessar nosso Google Drive, clique no link abaixo:</p>
         <a href="https://drive.google.com" target="_blank">Acessar Google Drive</a>
     </div>
+
+    <script>
+        window.onload = function() {
+            document.body.classList.add('fade-in');
+        };
+      </script>
 </body>
 </html>
