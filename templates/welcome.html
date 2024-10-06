@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação de Digitação Responsiva</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: rgb(15,13,13);
+            background: linear-gradient(180deg, rgba(15,13,13,1) 0%, rgba(26,26,26,1) 52%, rgba(0,0,0,1) 63%);
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 90%;
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            letter-spacing: 0.1em;
+            margin: 20px 0;
+            font-size: 1rem;
+            white-space: normal;
+            word-wrap: break-word;
+            display: inline-block; /* Exibir o texto como inline */
+            overflow: hidden; /* Esconder o texto não digitado ainda */
+            border-right: 0.15em solid #00ff00; /* Efeito do cursor */
+            animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { 
+                width: 0; /* O texto começa invisível */
+            }
+            to { 
+                width: 100%; /* Mostra o texto completo */
+            }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #00ff00; }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bem-vindo ao 42 Quake Heroes. Prepare-se para salvar a Terra, monitore os terremotos lunares e torne-se o herói que precisamos!</h1>
+    </div>
+
+</body>
+</html>

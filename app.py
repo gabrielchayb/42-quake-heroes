@@ -4,7 +4,15 @@ app = Flask(__name__)
 
 # home, index, first page , redirect to receivingcode
 @app.route('/')
-def home():
+def welcome():
+    return render_template('welcome.html')
+
+@app.route('/solarsystem')
+def solarsystem():
+    return render_template('solarsystem.html')
+
+@app.route('/home')
+def home ():
     return render_template('home.html')
 
 # scene in mars , second piece of text
@@ -41,9 +49,6 @@ def choosemission():
 @app.route('/explaining')
 def explaining():
     return render_template('explaining.html')
-
-
-
 
 
 
