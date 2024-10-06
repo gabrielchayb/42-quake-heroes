@@ -167,9 +167,7 @@ body.fade-in {
     transition: transform 0.3s ease;
 }
 
-.background-image img:hover {
-    transform: scale(1.1);
-}
+
 
 /* Responsividade */
 @media screen and (max-width: 768px) and (min-width: 480px) {

@@ -4,14 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>42 Quake Heroes</title>
-  <link rel="shortcut icon" type="im" href="/static/imgs/logo.jpeg">
+  <link rel="shortcut icon" type="image/x-icon" href="/static/imgs/logo.jpeg">
   <script src="https://kit.fontawesome.com/1bdef45d83.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
     body, html {
       font-family: 'Orbitron', sans-serif;
-      font-optical-sizing: auto;
-      font-style: bold;
       margin: 0;
       padding: 0;
       height: 100%;
@@ -31,9 +30,6 @@
     }
 
     .h2-centered {
-      font-family: 'Orbitron', sans-serif;
-      font-optical-sizing: auto;
-      font-style: bold;
       position: absolute;
       top: 50%; /* Centraliza verticalmente */
       left: 50%; /* Centraliza horizontalmente */
@@ -86,7 +82,7 @@
       Seu navegador não suporta o elemento de vídeo.
     </video>
 
-    <h2 class="h2-centered">receiving code...</h2>
+    <h2 class="h2-centered" id="text"></h2> <!-- Mantenha o ID para o efeito -->
 
     <div class="button-container" id="buttonContainer">
       <button onclick="window.location.href='{{ url_for('poscode') }}'">Next</button>
@@ -96,10 +92,25 @@
   <script>
     const video = document.getElementById('myVideo');
     const buttonContainer = document.getElementById('buttonContainer');
+    const text = document.getElementById('text');
 
     video.addEventListener('ended', function() {
       buttonContainer.style.display = 'block'; // Mostra o botão ao finalizar o vídeo
     });
+
+    // Inicializa o TypeWriter
+    var TypeWriter = new Typewriter(text, {
+        loop: false,
+        delay: 100,
+        cursor: '<span style="color: #5CE1E6;">|</span>'
+    });
+
+    // Aqui começamos a digitar o texto após um pequeno atraso
+    setTimeout(function() {
+        TypeWriter
+            .typeString('<span style="color:#5CE1E6;">Receiving code...</span>')
+            .start();
+    }, 200); // Atraso de 500 ms antes de iniciar a digitação
   </script>
 
 </body>

@@ -6,6 +6,11 @@
   <title>42 Quake Heroes</title>
   <link rel="shortcut icon" type="im" href="/static/imgs/logo.jpeg">
   <link rel="stylesheet" href="/static/css/styles.css">
+  <style>
+    body {
+      overflow: hidden; /* Bloqueia o scroll da página */
+    }
+  </style> 
 </head>
 <body class = "fade">
 
@@ -32,9 +37,10 @@
       </a>
     </div>
 
-    <div class="background-image lua">
-      <img src="/static/imgs/marsfloor0.png" alt="Imagem de Marte">
+    <div class="background-image lua" style="position: relative; width: 100%; height: 100vh; overflow: hidden;">
+      <img src="/static/imgs/marsfloor0.png" alt="Imagem de Marte" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
     </div>
+    
   </div>
 
   <script>
