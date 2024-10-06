@@ -23,40 +23,44 @@
         }
 
         body.fade-in {
-        opacity: 1;
+            opacity: 1;
         }
 
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1000px;
             text-align: center;
         }
+
         .logo img {
             max-width: 15%;
             height: auto;
-            
         }
+
         .team {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             margin-top: 20px;
         }
+
         .member {
-            flex: 1 1 calc(33.333% - 20px);
+            flex: 1 1 calc(33.333% - 20px); /* Três membros por linha */
             margin: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
             border-radius: 8px;
             background-color: white;
         }
+
         .member img {
             width: 100%;
             height: auto;
             border-radius: 50%;
         }
+
         .catalog-button {
-            margin-top: 20px;
+            margin-top: 30px;
             padding: 10px 20px;
             background-color: #007BFF;
             color: white;
@@ -65,14 +69,18 @@
             cursor: pointer;
             text-decoration: none;
         }
+
+        /* Ajuste responsivo para tablets */
         @media (max-width: 768px) {
             .member {
-                flex: 1 1 calc(50% - 20px);
+                flex: 1 1 calc(50% - 20px); /* Dois membros por linha */
             }
         }
+
+        /* Ajuste responsivo para celulares */
         @media (max-width: 480px) {
             .member {
-                flex: 1 1 100%;
+                flex: 1 1 100%; /* Um membro por linha */
             }
         }
     </style>
@@ -82,39 +90,39 @@
         <div class="logo">
             <img src="/static/imgs/logo.jpeg" alt="Logo">
         </div>
-        <div class="member">
-            <img src="member2.jpg" alt="Member 2">
-            <h3>Larissa Mello</h3>
-            <p>Team Manager</p>
-        </div>
         <div class="team">
             <div class="member">
-                <img src="member1.jpg" alt="Member 1">
+                <img src="/static/imgs/larissa.png" alt="Member 2">
+                <h3>Larissa Mello</h3>
+                <p>Team Manager</p>
+            </div>
+            <div class="member">
+                <img src="/static/imgs/gustavo antonio.png" alt="Member 1">
                 <h3>Gustavo Teixeira</h3>
                 <p>IA Developer</p>
             </div>
             <div class="member">
-                <img src="member3.jpg" alt="Member 3">
+                <img src="/static/imgs/aninha.png" alt="Member 3">
                 <h3>Ana Miziara</h3>
                 <p>UI/UX Designer</p>
             </div>
             <div class="member">
-                <img src="member4.jpg" alt="Member 4">
+                <img src="/static/imgs/gabriel.png" alt="Member 4">
                 <h3>Gabriel Chayb</h3>
                 <p>Web Developer</p>
             </div>
             <div class="member">
-                <img src="member5.jpg" alt="Member 5">
-                <h3>Alailton Alves </h3>
+                <img src="/static/imgs/Alailton.png" alt="Member 5">
+                <h3>Alailton Alves</h3>
                 <p>IA Developer</p>
             </div>
             <div class="member">
-                <img src="member6.jpg" alt="Member 6">
+                <img src="/static/imgs/Gustavo Ferreira.jpg" alt="Member 6">
                 <h3>Gustavo Tavares</h3>
                 <p>Web Developer</p>
             </div>
         </div>
-        
+
         <a href="catalog" class="catalog-button">View Catalog</a>
     </div>
 
