@@ -5,8 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>42 Quake Heroes</title>
   <link rel="shortcut icon" type="im" href="/static/imgs/logo.jpeg">
+  <script src="https://kit.fontawesome.com/1bdef45d83.js" crossorigin="anonymous"></script>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
     body, html {
+      font-family: 'Orbitron', sans-serif;
+      font-optical-sizing: auto;
+      font-style: bold;
       margin: 0;
       padding: 0;
       height: 100%;
@@ -26,6 +31,9 @@
     }
 
     .h2-centered {
+      font-family: 'Orbitron', sans-serif;
+      font-optical-sizing: auto;
+      font-style: bold;
       position: absolute;
       top: 50%; /* Centraliza verticalmente */
       left: 50%; /* Centraliza horizontalmente */
@@ -33,7 +41,6 @@
       text-align: center;
       font-size: 2.5em;
       color: white;
-      font-family: Arial, sans-serif;
     }
 
     .button-container {
@@ -79,7 +86,7 @@
       Seu navegador não suporta o elemento de vídeo.
     </video>
 
-    <h2 class="h2-centered">Receiving Code...</h2>
+    <h2 class="h2-centered">receiving code...</h2>
 
     <div class="button-container" id="buttonContainer">
       <button onclick="window.location.href='{{ url_for('poscode') }}'">Next</button>

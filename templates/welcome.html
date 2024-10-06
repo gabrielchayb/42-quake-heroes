@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <title>Animação de Digitação Responsiva</title>
+    <title>42 QuakeHeroes</title>
     <link rel="icon" href="/static/imgs/logo.jpeg" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Orbitron', sans-serif;
+            font-optical-sizing: auto;
+            font-style: bold;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -30,8 +34,28 @@
         }
 
         #text {
-            font-size: 20px;
-            font-family: Arial, sans-serif; /* Definindo uma fonte */
+            font-size: 1.2em;
+            font-family: 'Orbitron', sans-serif;
+            font-optical-sizing: auto;
+            font-style: bold;
+            line-height: 1.5;
+            
+        }
+
+         /* Definindo a animação fade-in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Classe para a imagem com a animação */
+        .fade-in-image {
+            opacity: 0;
+            animation: fadeIn 3s forwards; /* Animação dura 2 segundos */
         }
 
     </style>
@@ -39,26 +63,31 @@
 <body>
 
     <div class="container">
-        <div id="text"></div>
+        <div id="text" style="text-align: center;"></div>
     </div>
     
     <a href="{{ url_for('solarsystem') }}" class="image-buttons">
-        <img src="/static/imgs/modulo2.png" alt="Imagem do Módulo">
+        <img src="/static/imgs/modulo2.png" alt="Imagem do Módulo" >
     </a>
 
     <script>
         var text = document.getElementById('text')
         var TypeWriter = new Typewriter(text, {
             loop: false,
-            delay: 75,
-            cursor: '<span style="color: #00ff00;">|</span>'
+            delay: 30,
+            cursor: '<span style="color: #5CE1E6;">|</span>'
         });
-
+    
         TypeWriter
-            .pauseFor(1000)
-            .typeString('Bem-vindo ao <span style="color:#00ff00;">42 Quake Heroes</span> . Prepare-se para salvar a Terra, monitore os <span style="color:#00ff00;">terremotos lunares</span> e torne-se o herói que precisamos!')
+            .pauseFor(500)
+            .typeString('Welcome! We are the team <span style="color:#5CE1E6;">42 Quake Heroes</span>')
+            .pauseFor(500)
+            .deleteChars(15)
+            .pauseFor(300)  
+            .typeString('<br><img src="../static/imgs/logo.jpeg" class="fade-in-image" style="width: 200px; height: auto; margin-top: 20px;">') // Adiciona a imagem
+            .typeString('<br>Join us on an immersive journey to learn more about <br><span style="color:#5CE1E6;">seismic data across space</span>. Click the module to start your journey across the solar system!')
             .start()
-    </script>
+    </script>    
 
 </body>
 </html>
