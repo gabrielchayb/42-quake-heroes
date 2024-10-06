@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonquake Video</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+        @media (max-width: 600px) {
+            iframe {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Moonquake Video</h1>
+        <iframe src="https://www.youtube.com/embed/your_video_id" allowfullscreen></iframe>
+        <p>Descrição do vídeo sobre moonquakes e suas características.</p>
+    </div>
+</body>
+</html>
