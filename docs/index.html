@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <title>42 QuakeHeroes</title>
-    <link rel="icon" href="/static/imgs/logo.jpeg" type="image/x-icon">
+    <link rel="icon" href="static/imgs/logo.jpeg" type="image/x-icon">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
@@ -67,7 +67,7 @@
     </div>
     
     <a href="{{ url_for('solarsystem') }}" class="image-buttons">
-        <img src="/static/imgs/modulo2.png" alt="Imagem do Módulo" >
+        <img src="static/imgs/modulo2.png" alt="Imagem do Módulo" >
     </a>
 
     <script>
@@ -84,7 +84,7 @@
             .pauseFor(500)
             .deleteChars(16)
             .pauseFor(300)  
-            .typeString('<br><img src="../static/imgs/logo.jpeg" class="fade-in-image" style="width: 200px; height: auto; margin-top: 20px;">') // Adiciona a imagem
+            .typeString('<br><img src="..static/imgs/logo.jpeg" class="fade-in-image" style="width: 200px; height: auto; margin-top: 20px;">') // Adiciona a imagem
             .typeString('<br>Join us on an immersive journey to learn more about <br><span style="color:#5CE1E6;">seismic data across space</span>.')
             .typeString('<br>Click the module below to start your journey across the solar system!')
             .start()
