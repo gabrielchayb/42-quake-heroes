@@ -50,15 +50,16 @@
     .button-container button {
       padding: 15px 30px;
       font-size: 24px;
-      background-color: #e5e6e7;
-      color: black;
-      border: none;
+      background-color: #000000; /* Fundo preto */
+      color: white; /* Texto branco */
+      border: 2px solid #5CE1E6; /* Borda azul claro */
+      border-radius: 5px; /* Bordas arredondadas */
       cursor: pointer;
-      border-radius: 5px;
+      transition: background-color 0.3s ease; /* Adiciona uma transição suave */
     }
 
     .button-container button:hover {
-      background-color: #5271FF;
+      background-color: #5271FF; /* Cor de fundo azul médio no hover */
     }
 
     @media screen and (max-width: 768px) and (min-width: 480px) {

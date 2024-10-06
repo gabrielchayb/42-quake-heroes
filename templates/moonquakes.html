@@ -19,17 +19,29 @@
             align-items: center;
             opacity: 0;
             transition: opacity 1s ease;
-            background-color: whitesmoke;
-        
+            background-color: black; /* Background color changed to black */
+            color: white; /* Text color changed to white */
         }
 
         body.fade-in {
-        opacity: 1;
+            opacity: 1;
         }
 
         h1 {
             text-align: center;
             margin-top: 20px;
+            position: relative; /* Position for the underline */
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 4px; /* Thickness of the underline */
+            background-color: #5CE1E6; /* Light blue color */
+            position: absolute;
+            bottom: -5px; /* Space between the title and underline */
+            left: 0;
         }
 
         .container {
@@ -57,16 +69,16 @@
             transform: scale(1.05);
         }
 
-        /* Responsividade */
+        /* Responsiveness */
         @media (max-width: 1024px) {
             .element {
-                width: 45%; /* Ocupa mais espaço em telas médias */
+                width: 45%; /* Occupies more space on medium screens */
             }
         }
 
         @media (max-width: 768px) {
             .element {
-                width: 100%; /* Um por linha em telas menores */
+                width: 100%; /* One per line on smaller screens */
             }
         }
     </style>
@@ -98,6 +110,6 @@
         window.onload = function() {
             document.body.classList.add('fade-in');
         };
-      </script>
+    </script>
 </body>
 </html>

@@ -120,14 +120,18 @@ body.fade-in {
     text-decoration: none;
     font-size: 1.2rem;
     color: white; /* Texto branco */
-    padding: 10px 40px; /* Tamanho padronizado */
+    padding: 10px; /* Padding para espaçamento interno */
+    width: 150px; /* Largura fixa para padronizar os botões */
+    height: 50px; /* Altura fixa para padronizar os botões */
     border-radius: 10px; /* Bordas arredondadas */
     border: 2px solid #5CE1E6; /* Borda azul claro */
     transition: transform 0.3s ease, background-color 0.3s ease;
-    min-width: 120px; /* Largura mínima para padronizar os botões */
     text-align: center; /* Centralizar o texto */
+    display: inline-block; /* Permitir que os links se comportem como botões */
+    line-height: 50px; /* Centraliza o texto verticalmente */
 }
 
+/* Estilo para os botões no estado hover */
 .menu-buttons a:hover {
     transform: scale(1.1);
     background-color: #5271FF; /* Alteração de cor para azul médio no hover */
@@ -141,14 +145,18 @@ body.fade-in {
     margin-top: 10px; /* Adiciona um espaço acima do botão Team */
 }
 
+/* Estilo para o botão Team no estado hover */
 .menu-buttons .button-team:hover {
     background-color: #5271FF; /* Azul claro no hover */
     color: black; /* Texto preto para contraste */
 }
 
+/* Centralizar o texto dentro dos botões */
 .menu-buttons a p {
     margin: 0;
 }
+
+
 /* Estilos para a Lua (100% na parte inferior) */
 .background-image.lua {
     position: absolute;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deep Video</title>
-    <link rel="shortcut icon" type="im" href="/static/imgs/logo.jpeg">
+    <link rel="shortcut icon" type="image/jpeg" href="/static/imgs/logo.jpeg">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,13 +15,14 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background-color: #f0f0f0;
+            background-color: black; /* Background color changed to black */
+            color: white; /* Text color changed to white */
         }
         .container {
             max-width: 800px;
             width: 100%;
             padding: 20px;
-            background-color: whitesmoke;
+            background-color: #222; /* Darker background for the container */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
@@ -40,9 +41,7 @@
 <body>
     <div class="container">
         <h1>Deep Moonquake Video</h1>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/iyzK0Dc5W0c" 
-    allowfullscreen>
-</iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/iyzK0Dc5W0c" allowfullscreen></iframe>
         <p>The video shows one example of one of the deep moonquakes that our CNN model identified.</p>
     </div>
 </body>

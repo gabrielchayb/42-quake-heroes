@@ -33,8 +33,21 @@
         }
 
         .logo img {
-            max-width: 15%;
+            margin-top: 10px;
+            max-width: 20%;
             height: auto;
+        }
+
+        .catalog-container {
+            margin: 60px 0; /* Adiciona espaço acima e abaixo do botão */
+        }
+
+        .team-title {
+            color: #5CE1E6; /* Cor do título */
+            font-size: 24px; /* Tamanho da fonte */
+            margin: 40px 0; /* Margem acima e abaixo do título */
+            text-transform: uppercase; /* Letras maiúsculas */
+            font-weight: bold; /* Negrito */
         }
 
         .team {
@@ -60,14 +73,19 @@
         }
 
         .catalog-button {
-            margin-top: 30px;
-            padding: 10px 20px;
+            padding: 15px 30px; /* Aumenta o tamanho do botão */
+            font-size: 18px; /* Aumenta o tamanho da fonte */
             background-color: #007BFF;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
+            transition: background-color 0.3s; /* Animação na mudança de cor */
+        }
+
+        .catalog-button:hover {
+            background-color: #0056b3; /* Cor do botão ao passar o mouse */
         }
 
         /* Ajuste responsivo para tablets */
@@ -90,6 +108,13 @@
         <div class="logo">
             <img src="/static/imgs/logo.jpeg" alt="Logo">
         </div>
+
+        <div class="catalog-container">
+            <a href="catalog" class="catalog-button">View Catalog</a>
+        </div>
+
+        <h2 class="team-title">Meet Our Team</h2> <!-- Título adicionado -->
+
         <div class="team">
             <div class="member">
                 <img src="/static/imgs/larissa.png" alt="Member 2">
@@ -117,13 +142,11 @@
                 <p>IA Developer</p>
             </div>
             <div class="member">
-                <img src="/static/imgs/Gustavo Ferreira.jpg" alt="Member 6">
+                <img src="/static/imgs/gustavo ferreira.png" alt="Member 6">
                 <h3>Gustavo Tavares</h3>
                 <p>Web Developer</p>
             </div>
         </div>
-
-        <a href="catalog" class="catalog-button">View Catalog</a>
     </div>
 
     <script>

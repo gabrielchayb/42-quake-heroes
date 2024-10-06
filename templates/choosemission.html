@@ -4,24 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Choose Your Mission</title>
-  <link rel="shortcut icon" type="im" href="/static/imgs/logo.jpeg">
+  <link rel="shortcut icon" type="image/jpeg" href="/static/imgs/logo.jpeg">
   <style>
     body {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row; /* Modo padrão: horizontal */
-      height: 100vh;
-      overflow: hidden;
-      opacity: 0;
-      transition: opacity 1s ease;
+        font-family: 'Orbitron', sans-serif;
+        font-optical-sizing: auto;
+        font-style: bold;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 1s ease;
+        background-color: black; /* Background color changed to black */
+        color: white; /* Text color changed to white */
     }
 
     body.fade-in {
         opacity: 1;
     }
-    
     
     /* Title and subtitle styles */
     .title {
@@ -29,12 +31,15 @@
       font-weight: bold;
       margin-bottom: 0.5em;
       text-align: center;
-      color:white;
+      color: white;
+      border-bottom: 2px solid #5CE1E6; /* Sublinhado azul claro */
+      display: inline-block; /* Para que o sublinhado funcione corretamente */
     }
+    
     .subtitle {
       font-size: 1.2em;
       text-align: center;
-      color:white;
+      color: white;
     }
     
     canvas {
@@ -47,7 +52,7 @@
     @media (max-width: 768px) {
       body {
         flex-direction: column; /* Muda para coluna no modo responsivo */
-        align-items :first baseline;
+        align-items: first baseline;
         height: 100vh;
       }
       canvas {
@@ -55,20 +60,18 @@
         height: 50vh;
       }
       .title, .subtitle {
-        /* Adjust title and subtitle styles for smaller screens (optional) */
-        font-size: 1.5em; /* Example adjustment */
+        /* Ajusta o estilo do título e subtítulo para telas menores (opcional) */
+        font-size: 1.5em; /* Ajuste de exemplo */
       }
     }
   </style>
 </head>
-<body class = "fade">
+<body class="fade">
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     
-    
     <script>
-      
         // Setup basic scene, camera, and renderer
         const textContainer = document.createElement('div');
         textContainer.classList.add('container');
@@ -147,7 +150,6 @@
         loadModel('/static/models/mars.glb', -8, 0, '/marsquake1'); // Primeiro modelo
         loadModel('/static/models/moon.glb', 8, 0, '/moonquakes');  // Segundo modelo
         
-
         // Set initial camera position
         camera.position.set(0, 0, 20); // Ajustar a posição inicial da câmera para tela grande
 
