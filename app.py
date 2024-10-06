@@ -60,21 +60,10 @@ def moonquake2():
 def moonquake3():
     return render_template('moonquake3.html')
 
-@app.route('/marsquakes')
-def marsquakes():
-    return render_template('marsquakes.html')
 
 @app.route('/marsquake1')
 def marsquake1():
     return render_template('marsquake1.html')
-
-@app.route('/marsquake2')
-def marsquake2():
-    return render_template('marsquake2.html')
-
-@app.route('/marsquake3')
-def marsquake3():
-    return render_template('marsquake3.html')
 
 @app.route('/team')
 def team():

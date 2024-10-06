@@ -4,42 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moonquakes</title>
-    <link rel="shortcut icon" type="im" href="/static/imgs/logo.jpeg">
+    <link rel="shortcut icon" type="image/jpeg" href="/static/imgs/logo.jpeg">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+        body {
+            font-family: 'Orbitron', sans-serif;
+            font-optical-sizing: auto;
+            font-style: bold;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1s ease;
+            background-color: whitesmoke;
+        
+        }
+
+        body.fade-in {
+        opacity: 1;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
         .container {
             display: flex;
             justify-content: space-around;
+            flex-wrap: wrap;
             margin-top: 20px;
         }
+
         .element {
             text-align: center;
             width: 30%;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
         }
+
         .element img {
             width: 100%;
             height: auto;
+            border-radius: 8px;
+        }
+
+        .element:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .element {
+                width: 45%; /* Ocupa mais espaço em telas médias */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .element {
+                width: 100%; /* Um por linha em telas menores */
+            }
         }
     </style>
 </head>
-<body>
+<body class="fade">
     <h1>Moonquakes</h1>
     <div class="container">
-        <div class="element" onclick="location.href='moonquake1';" style="cursor: pointer;"></div>
-            <h2>Element 1</h2>
-            <img src="/static/imgs/lua.png" alt="Image 1">
+        <div class="element" onclick="location.href='moonquake1';">
+            <h2>Moon Shallow Quake</h2>
+            <img src="/static/imgs/shallow.jpeg" alt="Image 1">
             <p>Description for element 1.</p>
         </div>
-        <div class="element" onclick="location.href='moonquake2';" style="cursor: pointer;">
-            <h2>Element 2</h2>
-            <img src="/static/imgs/lua.png" alt="Image 2">
+        <div class="element" onclick="location.href='moonquake2';">
+            <h2>Moon Impact Quake</h2>
+            <img src="/static/imgs/impactquake.jpeg" alt="Image 2">
             <p>Description for element 2.</p>
         </div>
-        <div class="element" onclick="location.href='moonquake3';" style="cursor: pointer;">
-            <h2>Element 3</h2>
-            <img src="/static/imgs/lua.png" alt="Image 3">
+        <div class="element" onclick="location.href='moonquake3';">
+            <h2>Moon Deep Quake</h2>
+            <img src="/static/imgs/deepquake.jpeg" alt="Image 3">
             <p>Description for element 3.</p>
         </div>
     </div>
+
+    <script>
+        window.onload = function() {
+            document.body.classList.add('fade-in');
+        };
+      </script>
 </body>
-</html>
 </html>
