@@ -59,7 +59,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 1rem;
+    font-size: 2rem;
     text-align: center;
     z-index: 4;
   }
