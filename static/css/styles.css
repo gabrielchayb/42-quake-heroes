@@ -89,6 +89,30 @@ body {
     z-index: 4;
 }
 
+.button-back {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+.button-forward {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+.button-team {
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
 /* Estilos para a Lua (100% na parte inferior) */
 .background-image.lua {
     position: absolute;
