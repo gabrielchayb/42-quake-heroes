@@ -3,31 +3,203 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Choose Mission</title>
+  <title>3D GLB Models</title>
   <style>
     body {
+      margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: row; /* Modo padrão: horizontal */
       height: 100vh;
-      background-color: #f0f0f0;
-      font-family: Arial, sans-serif;
+      overflow: hidden;
     }
-    .button-container {
-      display: flex;
-      gap: 20px;
+    
+    /* Title and subtitle styles */
+    .title {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+      text-align: center;
+      color:white;
     }
-    .button-container button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
+    .subtitle {
+      font-size: 1.2em;
+      text-align: center;
+      color:white;
+    }
+    
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    /* Responsividade para telas menores que 768 pixels */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column; /* Muda para coluna no modo responsivo */
+        align-items :first baseline;
+        height: 100vh;
+      }
+      canvas {
+        width: 100vw;
+        height: 50vh;
+      }
+      .title, .subtitle {
+        /* Adjust title and subtitle styles for smaller screens (optional) */
+        font-size: 1.5em; /* Example adjustment */
+      }
     }
   </style>
 </head>
 <body>
-  <div class="button-container">
-    <button onclick="location.href='/moonquakes'">Moonquakes</button>
-    <button onclick="location.href='/marsquakes'">Marsquakes</button>
-  </div>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    
+    
+    <script>
+      
+        // Setup basic scene, camera, and renderer
+        const textContainer = document.createElement('div');
+        textContainer.classList.add('container');
+        document.body.appendChild(textContainer);
+
+        const title = document.createElement('h1');
+        title.classList.add('title');
+        title.textContent = 'Choose Your Mission';
+        textContainer.appendChild(title);
+
+        const subtitle = document.createElement('h3');
+        subtitle.classList.add('subtitle');
+        subtitle.textContent = 'Select a planet to explore its quakes';
+        textContainer.appendChild(subtitle);
+
+        // Style the text container to be positioned at the top center
+        textContainer.style.position = 'absolute';
+        textContainer.style.top = '10px';
+        textContainer.style.width = '100%';
+        textContainer.style.textAlign = 'center';
+        textContainer.style.zIndex = '1'; // Ensure the text is above the canvas
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Add ambient light and directional light
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+        scene.add(ambientLight);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(1, 1, 1).normalize();
+        scene.add(directionalLight);
+
+        // GLTF Loader to load GLB models
+        const loader = new THREE.GLTFLoader();
+        const models = [];
+
+        // Function to load models and make them clickable
+        function loadModel(path, positionX, positionY, url) {
+            loader.load(path, function(gltf) {
+                const model = gltf.scene;
+                model.position.set(positionX, positionY, 0);
+                model.scale.set(0.01, 0.01, 0.01); // Ajuste de escala
+                scene.add(model);
+                models.push({ model: model, url: url });
+
+                console.log('Modelo carregado:', model);
+            }, undefined, function(error) {
+                console.error(error);
+            });
+        }
+
+        // Function to adjust models' positions based on screen size
+        function adjustModelsForScreenSize() {
+            models.forEach(({ model }, index) => {
+                if (window.innerWidth <= 768) { // Tela pequena (modo responsivo)
+                    // Posicionar os modelos na vertical
+                    model.position.set(0, index * 3, 0); // Aumenta o espaço entre os modelos
+                } else {
+                    // Posicionar os modelos na horizontal (tela grande)
+                    model.position.set(index === 0 ? -8 : 8, 0, 0);
+                }
+            });
+
+            // Ajustar a câmera conforme a disposição dos modelos
+            if (window.innerWidth <= 768) {
+                camera.position.set(0, 0, 15); // Ajuste da câmera para modo vertical
+            } else {
+                camera.position.set(0, 0, 20); // Ajuste da câmera para modo horizontal
+            }
+        }
+
+        // Load two models
+        loadModel('/static/models/mars.glb', -8, 0, '/marsquakes'); // Primeiro modelo
+        loadModel('/static/models/moon.glb', 8, 0, '/moonquakes');  // Segundo modelo
+        
+
+        // Set initial camera position
+        camera.position.set(0, 0, 20); // Ajustar a posição inicial da câmera para tela grande
+
+        // Adjust models' positions on window resize
+        window.addEventListener('resize', function() {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            adjustModelsForScreenSize();
+        });
+
+        // Add event listener for mouse movement
+        document.addEventListener('mousemove', function(event) {
+            const mouse = new THREE.Vector2(
+                (event.clientX / window.innerWidth) * 2 - 1,
+                -(event.clientY / window.innerHeight) * 2 + 1
+            );
+
+            const raycaster = new THREE.Raycaster();
+            raycaster.setFromCamera(mouse, camera);
+
+            // Verifica se o mouse está sobre um modelo específico e apenas aquele modelo se move
+            models.forEach(({ model }) => {
+                const intersects = raycaster.intersectObject(model, true);
+                if (intersects.length > 0) {
+                    const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+                    const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+
+                    model.rotation.y = mouseX * Math.PI / 1; // Rotação no eixo Y mais suave
+                    model.rotation.x = mouseY * Math.PI / 1; // Rotação no eixo X com limite reduzido
+                }
+            });
+        });
+
+        // Add click event to redirect
+        document.addEventListener('click', function(event) {
+            const mouse = new THREE.Vector2(
+                (event.clientX / window.innerWidth) * 2 - 1,
+                -(event.clientY / window.innerHeight) * 2 + 1
+            );
+
+            const raycaster = new THREE.Raycaster();
+            raycaster.setFromCamera(mouse, camera);
+
+            models.forEach(({ model, url }) => {
+                const intersects = raycaster.intersectObject(model, true);
+                if (intersects.length > 0) {
+                    window.location.href = url; // Redirecionar para a rota
+                }
+            });
+        });
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+
+        animate();
+        adjustModelsForScreenSize(); // Ajustar a posição dos modelos inicialmente
+    </script>
 </body>
 </html>
