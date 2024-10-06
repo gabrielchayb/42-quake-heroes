@@ -41,6 +41,81 @@
       text-align: center;
       color: white;
     }
+
+    .catalog-container {
+        margin-top: -200px; /* Ajuste o valor para subir o botão */
+        text-align: center;
+    }
+
+    .catalog-button {
+        padding: 15px 30px; /* Tamanho do botão */
+        font-size: 18px; /* Tamanho da fonte */
+        background-color: #007BFF; /* Cor de fundo */
+        color: white; /* Cor do texto */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s; /* Animação na mudança de cor */
+    }
+
+    .catalog-button:hover {
+        background-color: #0056b3; /* Cor do botão ao passar o mouse */
+    }
+
+    /* Estilos para centralizar os botões no canto inferior */
+    .menu-buttons {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Espaçamento entre os botões */
+        z-index: 4;
+    }
+
+    /* Estilos para os links como botões */
+    .menu-buttons a {
+        background-color: #1463BD; /* Fundo azul escuro */
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: white; /* Texto branco */
+        padding: 10px; /* Padding para espaçamento interno */
+        width: 150px; /* Largura fixa para padronizar os botões */
+        height: 50px; /* Altura fixa para padronizar os botões */
+        border-radius: 10px; /* Bordas arredondadas */
+        border: 2px solid #5CE1E6; /* Borda azul claro */
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        text-align: center; /* Centralizar o texto */
+        display: inline-block; /* Permitir que os links se comportem como botões */
+        line-height: 50px; /* Centraliza o texto verticalmente */
+    }
+
+    /* Estilo para os botões no estado hover */
+    .menu-buttons a:hover {
+        transform: scale(1.1);
+        background-color: #5271FF; /* Alteração de cor para azul médio no hover */
+    }
+
+    /* Botão com menos destaque (Team) */
+    .menu-buttons .button-team {
+        background-color: #000000; /* Fundo preto */
+        border: 2px solid #5CE1E6; /* Azul claro na borda */
+        color: #E0E0E0; /* Texto mais claro */
+        margin-top: 10px; /* Adiciona um espaço acima do botão Team */
+    }
+
+    /* Estilo para o botão Team no estado hover */
+    .menu-buttons .button-team:hover {
+        background-color: #5271FF; /* Azul claro no hover */
+        color: black; /* Texto preto para contraste */
+    }
+
+    /* Centralizar o texto dentro dos botões */
+    .menu-buttons a p {
+        margin: 0;
+    }
     
     canvas {
       display: block;
@@ -211,6 +286,17 @@
         animate();
         adjustModelsForScreenSize(); // Ajustar a posição dos modelos inicialmente
     </script>
+    <div class="menu-buttons">
+        <a href="{{ url_for('poscode') }}" class="button-back">
+            <p>Back</p>
+        </a>
+        <a href="{{ url_for('team') }}" class="button-team">
+            <p>Team</p>
+        </a>
+        <a href="{{ url_for('catalog') }}" class="button-forward">
+            <p>Catalog</p>
+        </a>
+    </div>
 
     <script>
       window.onload = function() {

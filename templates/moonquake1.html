@@ -15,34 +15,65 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background-color: black; /* Background color changed to black */
-            color: white; /* Text color changed to white */
+            background-color: black; /* Cor de fundo preto */
+            color: white; /* Cor do texto branco */
         }
+
+        /* Container para o conteúdo do vídeo */
         .container {
             max-width: 800px;
             width: 100%;
             padding: 20px;
-            background-color: #222; /* Darker background for the container */
+            background-color: #222; /* Fundo mais escuro para o container */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
+
         iframe {
             width: 100%;
             height: 450px;
             border: none;
         }
+
         @media (max-width: 600px) {
             iframe {
                 height: 250px;
             }
         }
+
+        /* Botão de volta (Back) no canto superior esquerdo */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .back-button::before {
+            content: '\2190'; /* Código da seta para esquerda */
+            font-size: 24px;
+            color: white; /* Cor branca para a seta */
+        }
+
+        .back-button:hover::before {
+            transform: scale(1.2); /* Aumenta a seta ao passar o mouse */
+            transition: transform 0.2s ease;
+        }
+
     </style>
 </head>
 <body>
+    <!-- Botão de voltar -->
+    <button class="back-button" onclick="window.history.back();"></button>
+
     <div class="container">
         <h1>Shallow Moonquake Video</h1>
         <iframe src="https://www.youtube.com/embed/RXeptT_OY6I" allowfullscreen></iframe>
         <p>The video shows one example of one of the shallow moonquakes that our CNN model identified.</p>
     </div>
+    
 </body>
 </html>

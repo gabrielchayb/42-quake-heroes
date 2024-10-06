@@ -68,6 +68,81 @@
         .element:hover {
             transform: scale(1.05);
         }
+        .catalog-container {
+            margin-top: 40px; /* Espaço acima do botão */
+            text-align: center; /* Centraliza o botão */
+        }
+
+        .catalog-button {
+            padding: 15px 30px; /* Tamanho do botão */
+            font-size: 18px; /* Tamanho da fonte */
+            background-color: #007BFF; /* Cor de fundo */
+            color: white; /* Cor do texto */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s; /* Animação na mudança de cor */
+        }
+
+        .catalog-button:hover {
+            background-color: #0056b3; /* Cor do botão ao passar o mouse */
+        }
+
+            /* Estilos para centralizar os botões no canto inferior */
+        .menu-buttons {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Espaçamento entre os botões */
+            z-index: 4;
+        }
+
+        /* Estilos para os links como botões */
+        .menu-buttons a {
+            background-color: #1463BD; /* Fundo azul escuro */
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: white; /* Texto branco */
+            padding: 10px; /* Padding para espaçamento interno */
+            width: 150px; /* Largura fixa para padronizar os botões */
+            height: 50px; /* Altura fixa para padronizar os botões */
+            border-radius: 10px; /* Bordas arredondadas */
+            border: 2px solid #5CE1E6; /* Borda azul claro */
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            text-align: center; /* Centralizar o texto */
+            display: inline-block; /* Permitir que os links se comportem como botões */
+            line-height: 50px; /* Centraliza o texto verticalmente */
+        }
+
+        /* Estilo para os botões no estado hover */
+        .menu-buttons a:hover {
+            transform: scale(1.1);
+            background-color: #5271FF; /* Alteração de cor para azul médio no hover */
+        }
+
+        /* Botão com menos destaque (Team) */
+        .menu-buttons .button-team {
+            background-color: #000000; /* Fundo preto */
+            border: 2px solid #5CE1E6; /* Azul claro na borda */
+            color: #E0E0E0; /* Texto mais claro */
+            margin-top: 10px; /* Adiciona um espaço acima do botão Team */
+        }
+
+        /* Estilo para o botão Team no estado hover */
+        .menu-buttons .button-team:hover {
+            background-color: #5271FF; /* Azul claro no hover */
+            color: black; /* Texto preto para contraste */
+        }
+
+        /* Centralizar o texto dentro dos botões */
+        .menu-buttons a p {
+            margin: 0;
+        }
+
 
         /* Responsiveness */
         @media (max-width: 1024px) {
@@ -88,22 +163,38 @@
     <div class="container">
         <div class="element" onclick="location.href='moonquake1';">
             <h2>Moon Shallow Quake</h2>
+            <h3>04 / 17 / 1971</h3>
             <img src="/static/imgs/shallow.jpeg" alt="Image 1">
             <p>Shallow moonquakes are stronger and more intense.
                 These quakes occur near the surface of the Moon, can last for longer periods, and their causes are not yet fully understood.</p>
         </div>
         <div class="element" onclick="location.href='moonquake2';">
             <h2>Moon Impact Quake</h2>
+            <h3>04 / 25 / 1970</h3>
             <img src="/static/imgs/impactquake.jpeg" alt="Image 2">
             <p>Meteoroid impacts also trigger moonquakes.
                 When meteoroids collide with the Moon, they generate seismic waves. Unlike Earth, the Moon’s lack of atmosphere allows even small meteoroids to reach the surface, forming craters and causing brief, localized seismic activity known as impact moonquakes.</p>
         </div>
         <div class="element" onclick="location.href='moonquake3';">
             <h2>Moon Deep Quake</h2>
+            <h3>04 / 26 / 1970</h3>
             <img src="/static/imgs/deepquake.jpeg" alt="Image 3">
             <p>Deep moonquakes caused by tidal forces from Earth's gravity.
                 These quakes occur regularly, triggered by the gravitational pull between the Earth and the Moon. Typically ranging from 700 to 1,200 kilometers below the lunar surface.</p>
         </div>
+    </div>
+
+
+    <div class="menu-buttons">
+        <a href="{{ url_for('choosemission') }}" class="button-back">
+            <p>Missions</p>
+        </a>
+        <a href="{{ url_for('team') }}" class="button-team">
+            <p>Team</p>
+        </a>
+        <a href="{{ url_for('catalog') }}" class="button-forward">
+            <p>Catalog</p>
+        </a>
     </div>
 
     <script>
