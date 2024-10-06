@@ -15,22 +15,20 @@ def solarsystem():
 def home ():
     return render_template('home.html')
 
-# scene in mars , second piece of text
-@app.route('/mars')
-def mars():
-    return render_template('mars.html')
+@app.route('/homemoon')
+def homemoon():
+    return render_template('homemoon.html')
 
-# second piece of text moon
-@app.route('/home2')
-def home2():
-    return render_template('home2.html')
+# scene in mars , second piece of text
+@app.route('/homemars')
+def homemars():
+    return render_template('homemars.html')
 
 # third piece of text moon
-@app.route('/home1')
-def home1():
-    return render_template('home1.html')
+@app.route('/hometired')
+def hometired():
+    return render_template('hometired.html')
 
-# from home1, redirect to poscode , that is the video page 
 @app.route('/receivingcode')
 def receivingcode():
     return render_template('receivingcode.html')
@@ -46,11 +44,45 @@ def choosemission():
     return render_template('choosemission.html')
 
 # from posreceivied, redirect to choosemission
-@app.route('/explaining')
-def explaining():
-    return render_template('explaining.html')
+@app.route('/moonquakes')
+def moonquakes():
+    return render_template('moonquakes.html')
 
+@app.route('/moonquake1')
+def moonquake1():
+    return render_template('moonquake1.html')
 
+@app.route('/moonquake2')
+def moonquake2():
+    return render_template('moonquake2.html')
+
+@app.route('/moonquake3')
+def moonquake3():
+    return render_template('moonquake3.html')
+
+@app.route('/marsquakes')
+def marsquakes():
+    return render_template('marsquakes.html')
+
+@app.route('/marsquake1')
+def marsquake1():
+    return render_template('marsquake1.html')
+
+@app.route('/marsquake2')
+def marsquake2():
+    return render_template('marsquake2.html')
+
+@app.route('/marsquake3')
+def marsquake3():
+    return render_template('marsquake3.html')
+
+@app.route('/team')
+def team():
+    return render_template('team.html')
+
+@app.route('/catalog')
+def catalog():
+    return render_template('catalog.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
