@@ -101,9 +101,32 @@
                 flex: 1 1 100%; /* Um membro por linha */
             }
         }
+        /* Botão de volta (Back) no canto superior esquerdo */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .back-button::before {
+            content: '\2190'; /* Código da seta para esquerda */
+            font-size: 24px;
+            color: white; /* Cor branca para a seta */
+        }
+
+        .back-button:hover::before {
+            transform: scale(1.2); /* Aumenta a seta ao passar o mouse */
+            transition: transform 0.2s ease;
+        }
+
     </style>
 </head>
 <body>
+    <button class="back-button" onclick="window.history.back();"></button>
     <div class="container">
         <div class="logo">
             <img src="static/imgs/logo.jpeg" alt="Logo">
