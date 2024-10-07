@@ -79,7 +79,7 @@
 <body>
 
   <div class="video-container">
-    <video id="myVideo" autoplay>
+    <video id="myVideo" autoplay muted>
       <source src="static/videos/solarsystem.mp4" type="video/mp4">
       Seu navegador não suporta o elemento de vídeo.
     </video>
@@ -87,7 +87,7 @@
     <h2 class="h2-centered"></h2>
 
     <div class="button-container" id="buttonContainer">
-      <button onclick="window.location.href='{{ url_for('home') }}'">Explore</button>
+      <button onclick="window.location.href='home.html'">Explore</button>
     </div>
   </div>
 

@@ -73,5 +73,7 @@ def team():
 def catalog():
     return render_template('catalog.html')
 
+from flask_frozen import Freezer
+freezer = Freezer(app)
 if __name__ == '__main__':
     app.run(debug=True)
